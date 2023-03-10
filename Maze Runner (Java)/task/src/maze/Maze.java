@@ -1,17 +1,17 @@
 package maze;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-//TODO check out solutions
-public class Maze {
+public class Maze implements Serializable {
     private final Integer[][] maze;
     private static final int WALL = 1;
     private static final int PATH = 0;
 
-    // create and initialize a 2d-array
+    // create and initialize a 2D array
     public Maze(int rows, int columns) {
         maze = new Integer[rows][columns];
         for (int r = 0; r < maze.length; r++) {
