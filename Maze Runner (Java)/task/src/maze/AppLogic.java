@@ -24,6 +24,7 @@ public class AppLogic {
     private void addMazeExistenceDependentMenuItems() {
         menuItems.putIfAbsent(3, "Save the maze");
         menuItems.putIfAbsent(4, "Display the maze");
+        menuItems.putIfAbsent(5, "Find the escape");
     }
 
     private int getMenuChoice() {
@@ -47,9 +48,15 @@ public class AppLogic {
                 case 2 -> loadMazeWorkflow();
                 case 3 -> saveMazeWorkflow();
                 case 4 -> System.out.println(maze);
+                case 5 -> findEscape();
                 case 0 -> { stop = true; System.out.println("Bye!"); } 
             }
         } while (!stop);
+    }
+
+    private void findEscape() {
+        maze.findEscape();
+        System.out.println(maze);
     }
 
     private void saveMazeWorkflow() {
